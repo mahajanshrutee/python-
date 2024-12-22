@@ -1,0 +1,19 @@
+# lambda
+triangle = lambda m, n : 1/2*m*n
+res = triangle(34, 24)
+print("Area of the triangle:", res)
+
+#Arithmetic
+add = lambda a, b: a + b;
+sub = lambda a, b: a - b;
+multiply = lambda a, b: a * b;
+div = lambda a, b: a / b;
+print("value of the a:",add(45, 98))
+print("value of the b:",sub(98, 76))
+print("value of the c:",multiply(45, 98))
+print("value of the d:",div(102, 19))
+
+# filter
+series = [23,45,57,39,1,3,95,3,8,85]
+result = filter (lambda m: m > 29, series)
+print('All the numbers greater than 29 in the series are :',list(result))
