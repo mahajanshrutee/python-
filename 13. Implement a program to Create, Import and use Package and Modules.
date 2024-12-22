@@ -1,0 +1,31 @@
+1. Create a directory called my_package1.
+
+!mkdir my_package1
+
+
+
+
+%%writefile my_package1/ init .py
+#__init__.py can be empty or contain initialization
+
+
+%%writefilemy_package1/math_operations.py
+# math_operations.py
+def add(a,b): 
+return a + b
+def subtract(a, b):
+return a - b
+def multiply(a,b):
+return a * b
+def divide(a, b):if b == 0:
+raise ValueError("Cannot divide byzero")
+return a / b
+4. # main.py
+from my_package1 import math_operations
+# Using the functions from math_operations module
+a = 10
+b = 5
+print(f"{a} + {b} = {math_operations.add(a, b)}")
+print(f"{a}{b}={math_operations.subtract(a,b)}")
+print(f"{a}*{b}={math_operations.multiply(a,b)}")
+print(f"{a}/{b}={math_operations.divide(a,b)}")
