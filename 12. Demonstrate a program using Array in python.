@@ -1,0 +1,48 @@
+import array
+def main():
+
+# 1. Create an array of integers
+arr = array.array('i', [1, 2, 3, 4, 5])
+print("Array of integers:", arr)
+
+# 2. Append an element to the array
+arr.append(6)
+print("Array after appending 6:", arr)
+
+# 3. Insert an element at a specific index
+arr.insert(2, 10)
+print("Array after inserting 10 at index 2:", arr)
+
+# 4. Remove an element by value
+arr.remove(4)
+print("Array after removing 4:", arr)
+
+# 5. Pop an element by index
+popped_element = arr.pop(3)
+print("Array after popping element at index 3: {arr}")
+print("Popped element: {popped_element}")
+
+# 6. Accessing elements by index
+print("Element at index 2:", arr[2])
+
+# 7. Find index of an element
+index_of_10 = arr.index(10)
+print("Index of 10 in array:", index_of_10)
+
+# 8. Array slicing (similar to list slicing)
+sliced_arr = arr[1:4]
+
+23
+
+print("Sliced array from index 1 to 3:", sliced_arr)
+
+# 9. Length of the array
+print("Length of the array:", len(arr))
+
+# 10. Convert array to list
+arr_list = arr.tolist()
+print("Array converted to list:", arr_list)
+
+# Call the main function
+if __name__ == "__main__":
+main()
