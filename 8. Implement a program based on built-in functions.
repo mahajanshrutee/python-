@@ -1,0 +1,67 @@
+def main():
+# len()
+list5 = [1, 2, 3, 4, 5, 10]
+print("Length of list5:", len(list5)) # Output: 6
+
+# max()
+list5 = [1, 2, 3, 4, 5, 10]
+print("Max of list5:", max(list5)) # Output: 10
+
+# min()
+my_list = [1, 2, 3, 4, 5, 10]
+print("Min of my_list:", min(my_list)) # Output: 1
+
+# zip()
+list1 = [1, 2, 3]
+list2 = ['a', 'b', 'c']
+print("Zipped lists:", list(zip(list1, list2))) # Output: [(1, 'a'), (2, 'b'), (3,
+'c')]
+
+# sum()
+my_list = [1, 2, 3, 4, 5, 10]
+print("Sum of my_list:", sum(my_list)) # Output: 25
+
+# range()
+print("Numbers from 0 to 4:", list(range(5))) # Output: [0, 1, 2, 3, 4]
+
+# filter() - Filter even numbers
+def is_even(num):
+return num % 2 == 0
+
+numbers = [1, 2, 3, 4, 5, 6, 10]
+even_numbers = list(filter(is_even, numbers))
+print("Even numbers:", even_numbers) # Output: [2, 4, 6, 10]
+
+
+
+# map() - Map function to square the numbers
+def square(num):
+return num ** 2
+
+squared_numbers = list(map(square, numbers))
+print("Squared numbers:", squared_numbers) # Output: [1, 4, 9, 16, 25,
+36, 100]
+
+# pow() - Calculate power
+print("2 to the power of 3:", pow(2, 3)) # Output: 8
+print("9 to the power of 3:", pow(9, 3)) # Output: 729
+
+# sorted() - Sort the list
+list5 = [34, 98, 87, 54, 12, 65, 46, 65]
+print("Sorted list5:", sorted(list5)) # Output: [12, 34, 46, 54, 65, 65, 87,
+98]
+
+# type() - Check the type of a variable
+print("Type of list5:", type(list5)) # Output: <class 'list'>
+
+# count() - Count occurrences of an element
+Student_Name = ["Sanket", "Bhupendra", "Munish", "Ketan"]
+print(Student_Name.count("Munish")) # Output: 1
+
+# index() - Find the index of an element
+Student_Name = ["Sanket", "Bhupendra", "Munish", "Ketan"]
+print(Student_Name.index("Sanket")) # Output: 0
+
+# Call the main function
+if __name__ == "__main__":
+main()
