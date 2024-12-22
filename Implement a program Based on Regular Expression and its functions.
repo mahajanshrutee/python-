@@ -1,0 +1,28 @@
+import os
+import shutil
+
+# Step 1: Paths and Directories
+new_dir = os.path.join(os.getcwd(), "test_dir")
+os.makedirs(new_dir, exist_ok=True)
+
+# Step 2: File Information and Creation
+file_name = os.path.join(new_dir, "sample.txt")
+with open(file_name, 'w') as f: f.write("This is a sample file.")
+print(f"\nFile Path: {file_name}\nExists: {os.path.exists(file_name)}"
+f"\nSize: {os.path.getsize(file_name)} bytes\nModified:
+{os.path.getmtime(file_name)}"
+f"\nAbsolute Path: {os.path.abspath(file_name)}")
+
+# Step 3: Renaming, Moving and Copying the file
+new_file_name = os.path.join(os.getcwd(), "renamed_sample.txt")
+shutil.move(file_name, new_file_name)
+copied_file_path = new_file_name.replace("renamed", "copied")
+shutil.copy(new_file_name, copied_file_path)
+print(f"File Moved to: {new_file_name}\nFile Copied to:
+{copied_file_path}")
+
+# Step 4: Removing the files and Directory
+os.remove(new_file_name)
+os.remove(copied_file_path)
+os.rmdir(new_dir)
+print(f"Files and Directory Removed.")
