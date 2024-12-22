@@ -1,0 +1,16 @@
+Step-by-Step Installation Process for Python
+1. Installing Python on Windows
+Step 1: Download Python
+1. Go to the official Python website.
+2. Navigate to the "Downloads" section and select "Windows".
+3. Click on the latest stable release version of Python.
+Step 2: Run the Installer
+1. Once the download is complete, open the installer.
+2. Check the box that says "Add Python to PATH". This is important for accessing
+Python from the command line.
+3. Choose "Install now" to install Python with default settings or "Customize
+installation" for advanced options.
+Step 3: Verify the Installation
+1. Open Command Prompt.
+2. Type python --version and press Enter. You should see the version of Python that you
+installed.
