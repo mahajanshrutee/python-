@@ -1,0 +1,42 @@
+# Define fil path
+file_path
+='abc.txt’
+# 1. Writing to a Text File
+def write_to_file(file_path,
+text): with open(file_path,
+'w') as file:
+file.write(text)
+print("Text has been written to the file.")
+# 2. Appending Text to a File
+def append_to_file(file_path,
+text):with open(file_path,
+'a') as file:
+file.write(text)
+print("Text has been appended to the file.")
+# 3. Reading from a Text
+Filedef
+read_from_file(file_path:
+try:
+with open(file_path, 'r') as
+file:content = file.read()
+print("File content read
+successfully.")return content
+except File Not Found
+Error:
+print("File not found.")
+return None
+# Main program logic
+if name == " main ":
+# Write initial content to the file
+initial_text = "This is the initial text in the
+file.\n"write_to_file(file_path, initial_text)
+# Append additional content to the file
+additional_text = "This is the additional text being
+appended.\n"append_to_file(file_path, additional_text)
+# Read the content of the file
+content =
+read_from_file(file_path)if
+content is not None:
+print("File
+Content:")
+print(content)
