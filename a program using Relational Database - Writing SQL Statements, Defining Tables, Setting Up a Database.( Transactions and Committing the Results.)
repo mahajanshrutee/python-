@@ -1,0 +1,65 @@
+import sqlite3
+# Connect to SQLite database (it will create the database if it doesn't
+exist)
+def create_database():
+conn = sqlite3.connect('company.db') # 'company.db' is the
+database file
+cursor = conn.cursor()
+# Create a table (DDL statement)
+cursor.execute('''CREATE TABLE IF NOT EXISTS employees (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+name TEXT NOT NULL,
+department TEXT NOT NULL,
+salary REAL NOT NULL,
+hire_date TEXT NOT NULL
+)''')
+print("Table 'employees' created successfully.")
+conn.commit() # Commit the DDL changes
+conn.close() # Close the connection
+# Insert multiple employee records in a transaction
+def insert_data():
+conn = sqlite3.connect('company.db')
+cursor = conn.cursor()
+try:
+# Begin transaction
+cursor.execute("BEGIN TRANSACTION;")
+# Insert some data into employees table (DML statement)
+cursor.execute("INSERT INTO employees (name, department,
+salary, hire_date) VALUES (?, ?, ?, ?)",
+('John Doe', 'HR', 50000, '2020-01-15'))
+
+cursor.execute("INSERT INTO employees (name, department,
+salary, hire_date) VALUES (?, ?, ?, ?)",
+('Jane Smith', 'IT', 70000, '2019-07-01'))
+cursor.execute("INSERT INTO employees (name, department,
+salary, hire_date) VALUES (?, ?, ?, ?)",
+('Mike Johnson', 'Finance', 60000, '2021-05-12'))
+# Commit the transaction
+conn.commit()
+print("Transaction committed successfully.")
+except sqlite3.Error as e:
+# Rollback in case of any error
+conn.rollback()
+print(f"An error occurred: {e}")
+finally:
+# Close the connection
+conn.close()
+# Fetch data from the employees table and display it
+def fetch_data():
+conn = sqlite3.connect('company.db')
+cursor = conn.cursor()
+# Query to fetch all records from the employees table
+cursor.execute("SELECT * FROM employees")
+# Fetch all rows and print them
+rows = cursor.fetchall()
+for row in rows:
+print(row)
+conn.close()
+# Main function to execute all steps
+if __name__ == '__main__':
+create_database() # Step 1: Set up the database and define the table
+insert_data() # Step 2: Insert data with transaction and commit
+
+
+
+fetch_data() # Step 3: Fetch and display the data
