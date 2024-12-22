@@ -1,0 +1,66 @@
+import tkinter as tk
+# Initialize the main
+windowroot = tk.Tk()
+root.title("Layout and Packing Order
+Example")root.geometry("400x400")
+# Step 1: Create Frames for Layout
+Management# Frame 1 at the top
+(packing at the top)
+frame1 = tk.Frame(root, bg="lightblue", height=100,
+width=400)frame1.pack(fill="x", padx=10, pady=10)
+# Frame 2 in the middle (packing at the left and right inside
+this frame)frame2 = tk.Frame(root, bg="lightgreen",
+height=100, width=400) frame2.pack(fill="both",
+expand=True, padx=10, pady=10)
+# Frame 3 at the bottom (packing at the bottom)
+frame3 = tk.Frame(root, bg="lightyellow", height=100, width=400)
+frame3.pack(fill="x", padx=10, pady=10)
+# Step 2: Add Widgets to Frame 1 (Top)
+label1 = tk.Label(frame1, text="Top Frame (Light Blue)", font=("Arial",
+14))
+label1.pack(pady=20)
+# Step 3: Add Widgets to Frame 2 (Middle)
+label2 = tk.Label(frame2, text="Middle Frame (Light Green)",
+font=("Arial", 14))label2.pack(side="left", padx=20, pady=20)
+button1 = tk.Button(frame2, text="Button 1",
+font=("Arial", 12))button1.pack(side="left", padx=20)
+
+button2 = tk.Button(frame2, text="Button 2",
+font=("Arial", 12))button2.pack(side="right",padx=20)
+# Step 4: Add Widgets to Frame 3 (Bottom)
+label3 = tk.Label(frame3, text="Bottom Frame(Light
+Yellow)",font=("Arial", 14))
+label3.pack(pady=20)
+
+quit_button = tk.Button(frame3, text="Quit", font=("Arial", 12),
+command=root.quit, fg="red")
+quit_button.pack(pady=10)
+
+# Start the GUI event loop
+root.mainloop()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
