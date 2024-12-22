@@ -1,0 +1,12 @@
+File 1) mymodule.py
+person1 = {"name":
+"John","age":
+36,
+"country": "Norway"
+}
+File 2) File2.py
+import mymodule #mymodule is the first
+file namea = mymodule.person1["age"]
+print(a)
+Note: Run File2.py (save File 1 as a name mymodule.py and this
+name use asa package in File 2)
