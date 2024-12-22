@@ -1,0 +1,26 @@
+First step: pip install beautifulsoup4
+from bs4 import BeautifulSoup
+
+html_content = """
+<html>
+<head>
+<title>Simple HTML Page</title>
+</head>
+<body>
+<h1>Main Heading</h1>
+<p>This is the first paragraph of the page.</p>
+<p>This is the second paragraph with <a href="#">a link</a>.</p>
+</body>
+</html>"""
+# Parse the HTML content with BeautifulSoup
+soup = BeautifulSoup(html_content, 'html.parser')
+# Extract and print the title
+title = soup.title.string
+print(f"Title: {title}")
+# Extract and print the heading (h1)
+heading = soup.h1.string
+print(f"Heading: {heading}")
+# Extract and print all paragraphs
+paragraphs = soup.find_all('p')
+for i, paragraph in enumerate(paragraphs, 1):
+print(f"Paragraph {i}: {paragraph.text}")
