@@ -1,0 +1,44 @@
+import dbm
+# Creating and storing key-value pairs in a DBM database
+def create_db():
+with dbm.open('example_db', 'c') as db: # 'c' mode means
+create if it doesn't exist
+# Add key-value pairs to the database
+db[b'name'] = b'John Doe'
+db[b'age'] = b'30'
+db[b'city'] = b'New York'
+db[b'occupation'] = b'Software Developer'
+print("Data has been written to the DBM database.")
+# Accessing and retrieving key-value pairs from the DBM
+database
+def access_db():
+
+with dbm.open('example_db', 'r') as db: # 'r' mode means read-
+only
+
+# Access and print values from the database
+name = db.get(b'name', b'Unknown').decode('utf-8')
+age = db.get(b'age', b'Unknown').decode('utf-8')
+city = db.get(b'city', b'Unknown').decode('utf-8')
+
+occupation = db.get(b'occupation', b'Unknown').decode('utf-
+8')
+
+print(f"Name: {name}")
+print(f"Age: {age}")
+print(f"City: {city}")
+print(f"Occupation: {occupation}")
+# Delete a key from the DBM database
+def delete_from_db():
+with dbm.open('example_db', 'w') as db: # 'w' mode means
+read/write (must exist)
+
+40
+
+del db[b'age'] # Delete the 'age' key
+print("Key 'age' has been deleted.")
+# Run the functions
+create_db() # Create the DB and store data
+access_db() # Access and print the stored data
+delete_from_db() # Delete an entry
+access_db() # Access the data again to check deletion
