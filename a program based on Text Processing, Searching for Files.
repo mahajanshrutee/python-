@@ -1,0 +1,25 @@
+import os
+import fnmatch
+def search_files(directory, pattern):
+"""Search for files in the directory matching the given pattern."""
+matches = [] # List to store the matched file paths
+# Walk through the directory
+for root, dirs, files in os.walk(directory):
+for filename in fnmatch.filter(files, pattern): # Match files against the
+pattern
+matches.append(os.path.join(root, filename)) # Add the full file
+path to matches
+return matches
+if __name__ == "__main__":
+# Specify the directory and file pattern
+search_directory = input("Enter the directory to search in: ")
+file_pattern = input("Enter the file pattern (e.g., *.txt): ")
+# Search for files
+found_files = search_files(search_directory, file_pattern)
+# Display results
+if found_files:
+print("Found files:")
+for file in found_files:
+print(file)
+else:
+print("No files found matching the pattern.")
